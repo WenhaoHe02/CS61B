@@ -20,8 +20,9 @@ public class Primes {
      */
     public static boolean isPrime(int n) {
         // Corner cases
+        if(1 == n)return false;
        int factor = (int)Math.sqrt(n);
-       for(int i =2; i<factor; ++i){
+       for(int i =2; i <= factor; ++i){
            if(n%i == 0)return false;
        }
        
