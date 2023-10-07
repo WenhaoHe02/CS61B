@@ -11,6 +11,7 @@ public class IntList {
 
     /** Return the size of the list using... recursion! */
     public int size() {
+        if(this == null){return 0;}
         if (rest == null) {
             return 1;
         }

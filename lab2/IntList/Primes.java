@@ -20,23 +20,11 @@ public class Primes {
      */
     public static boolean isPrime(int n) {
         // Corner cases
-        if (n <= 1 || n == 4) return false;
-        if (n <= 3) return true;
-
-        int k = 3; // Try k = 3 times
-        while (k > 0)
-        {
-            // Pick a random number in [2..n-2]
-            // Above corner cases make sure that n > 4
-            int a = 2 + (int)(Math.random() % (n - 4));
-
-            // Fermat's little theorem
-            if (power(a, n - 1, n) != 1)
-                return false;
-
-            k--;
-        }
-
+       int factor = (int)Math.sqrt(n);
+       for(int i =2; i<factor; ++i){
+           if(n%i == 0)return false;
+       }
+       
         return true;
     }
 
