@@ -1,6 +1,8 @@
 package timingtest;
 import edu.princeton.cs.algs4.Stopwatch;
 
+import java.util.List;
+
 /**
  * Created by hug.
  */
@@ -23,6 +25,31 @@ public class TimeSLList {
 
     public static void timeGetLast() {
         // TODO: YOUR CODE HERE
+        AList<Integer> Ns = new AList<>();
+        AList<Integer> opCount = new AList<>();
+        for(int i =0; i < 7; ++i) {
+            opCount.addLast(10000);
+        }
+        for(int i =0; i < 7; ++i){
+            Ns.addLast(1000*(int)Math.pow(2,i));
+        }
+        AList<Double>times = new AList<>();
+        for(int i = 0; i< Ns.size(); ++i){
+            SLList<Integer> slList = new SLList<>();
+            for(int j = 0; j<Ns.get(i); ++j ){
+                slList.addLast(0);
+            }
+            Stopwatch sw = new Stopwatch();
+            for(int k = 0; k<10000; ++k) {
+                slList.getLast();
+            }
+            double myTime = sw.elapsedTime();
+            times.addLast(myTime);
+        }
+        printTimingTable(Ns, times, opCount);
+        
+        
+        
     }
 
 }
