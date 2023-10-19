@@ -39,6 +39,7 @@ public enum Side {
     }
 
     /** Returns the side opposite of side S. */
+    /** @return side*/
     static Side opposite(Side s) {
         if (s == NORTH) {
             return SOUTH;
