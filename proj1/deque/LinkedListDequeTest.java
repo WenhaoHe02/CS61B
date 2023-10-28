@@ -68,7 +68,8 @@ public class LinkedListDequeTest {
         
         LinkedListDeque<Integer> lld1 = new LinkedListDeque<>();
         lld1.addFirst(3);
-
+        
+        
         lld1.removeLast();
         lld1.removeFirst();
         lld1.removeLast();
@@ -163,6 +164,6 @@ public class LinkedListDequeTest {
         }
         assertTrue("should be true", lli1.equals(lli2));
         lli1.removeLast();
-        assertTrue("should be false", lli1.equals(lli2));
+        assertFalse("should be false", lli1.equals(lli2));
     }
 }

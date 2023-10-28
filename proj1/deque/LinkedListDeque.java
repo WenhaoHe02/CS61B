@@ -1,8 +1,8 @@
 package deque;
 
+
 import java.util.Iterator;
-import java.util.List;
-import java.util.Optional;
+
 
 /**
  * ClassName : LinkedListDeque
@@ -13,7 +13,7 @@ import java.util.Optional;
  * @Create 2023/10/21 16:19
  * @Version Latest
  */
-public class LinkedListDeque <T> implements Deque<T>, Iterable<T> {
+public class LinkedListDeque<T> implements Deque<T>, Iterable<T> {
     private Node sentinel;
     private int size;
     
@@ -69,8 +69,12 @@ public class LinkedListDeque <T> implements Deque<T>, Iterable<T> {
         
         @Override
         public boolean hasNext() {
-            if(size == 0)return false;
-            if (position != sentinel) return true;
+            if (size == 0) {
+                return false;
+            }
+            if (position != sentinel) {
+                return true;
+            }
             return false;
         }
         
@@ -180,13 +184,25 @@ public class LinkedListDeque <T> implements Deque<T>, Iterable<T> {
     }
     @Override
     public boolean equals(Object list) {
-        if(list == null)return false;
-        if(list.getClass() != this.getClass())return false;
-        LinkedListDeque MyList = (LinkedListDeque) list;
-        if(this.size != MyList.size())return false;
-        for(int i = 0; i < size; i++){
-            if(this.get(i) != MyList.get(i))return false;
+        if (this == list) {
+            return true;
+        }
+        if (list == null) {
+            return false;
+        }
+        if (!(list instanceof Deque)) {
+            return false;
+        }
+        Deque<T> myList = (Deque<T>) list;
+        if (this.size != myList.size()) {
+            return false;
+        }
+        for (int i = 0; i < size; i++) {
+            if (!this.get(i).equals(myList.get(i))) {
+                return false;
+            }
         }
         return true;
     }
 }
+

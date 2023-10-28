@@ -19,12 +19,13 @@ import edu.princeton.cs.algs4.StdDraw;
 public class GuitarHero {
     public static final String KEYBOARD = "q2we4r5ty7u8i9op-[=zxdcfvgbnjmk,.;/' ";
     public static final int KEYS_AMOUNT = KEYBOARD.length();
+    public static final double CONCERT_A = 440.0;
     
     public static void main(String[] args) {
         GuitarString[] guitarStrings = new GuitarString[KEYS_AMOUNT];
         
         for (int i = 0; i < KEYS_AMOUNT; i++) {
-            double frequency = 440 * Math.pow(2, (i - 24) / 12.0);
+            double frequency = CONCERT_A * Math.pow(2, (i - 24) / 12.0);
             guitarStrings[i] = new GuitarString(frequency);
         }
         
