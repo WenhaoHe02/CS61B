@@ -14,11 +14,11 @@ import java.util.Iterator;
  * @Version Latest
  */
 public class ArrayDeque<T> implements Deque<T>, Iterable<T>{
-    protected T[] items;
-    protected int size;
-    protected int nextFirst;
-    protected int nextLast;
-    protected int capacity;
+    private T[] items;
+    private int size;
+    private int nextFirst;
+    private int nextLast;
+    private int capacity;
     public ArrayDeque(){
         this.items = (T[])new Object[8];
         size = 0;
@@ -26,14 +26,10 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T>{
         nextLast = 1;
         capacity = items.length;
     }
-    public boolean isEmpty(){
-        if(size == 0)return true;
-        return false;
-    }
     public int size(){
         return size;
     }
-    public void resize(int cap) {
+    private void resize(int cap) {
         T[] copyArray = (T[])new Object[cap];
         int position = 0;
         Iterator<T> it = new ArrayDequeIterator();
