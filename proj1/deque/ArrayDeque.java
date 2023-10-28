@@ -53,7 +53,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T>{
     }
     
     public void addFirst(T value) {
-        if (size % 8 ==0 && size != 0) resize(capacity * 2);
+        if (size == capacity) resize(capacity * 2);
         items[nextFirst] = value;
         
         nextFirst = (nextFirst - 1 + capacity) % capacity;
@@ -142,6 +142,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T>{
     }
     @Override
     public boolean equals(Object aDeque){
+        if(aDeque == null)return false;
         if(aDeque.getClass() != this.getClass())return false;
         ArrayDeque<T> myDeque = (ArrayDeque<T>) aDeque;
         if(this.size != myDeque.size())return false;

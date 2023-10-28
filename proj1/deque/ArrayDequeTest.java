@@ -165,4 +165,14 @@ public class ArrayDequeTest {
         lli1.removeLast();
         assertFalse("should be false", lli1.equals(lli2));
     }
+    @Test
+    public void heapMemoryTest(){
+        ArrayDeque<Integer> lli1 = new ArrayDeque<>();
+        for(int i =0; i<5000; i++){
+            lli1.addFirst(i);
+            lli1.addLast(i);
+            System.out.println(lli1.size());
+        }
+        
+    }
 }

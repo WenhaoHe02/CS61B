@@ -69,6 +69,7 @@ public class LinkedListDeque <T> implements Deque<T>, Iterable<T> {
         
         @Override
         public boolean hasNext() {
+            if(size == 0)return false;
             if (position != sentinel) return true;
             return false;
         }
@@ -179,7 +180,10 @@ public class LinkedListDeque <T> implements Deque<T>, Iterable<T> {
     }
     @Override
     public boolean equals(Object list) {
+        if(list == null)return false;
+        if(list.getClass() != this.getClass())return false;
         LinkedListDeque MyList = (LinkedListDeque) list;
+        if(this.size != MyList.size())return false;
         for(int i = 0; i < size; i++){
             if(this.get(i) != MyList.get(i))return false;
         }
