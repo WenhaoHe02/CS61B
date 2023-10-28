@@ -13,7 +13,7 @@ import java.util.Comparator;
  */
 public class ComparatorOfInteger implements Comparator<Integer> {
     @Override
-    public int compare(Integer x1, Integer x2){
+    public int compare(Integer x1, Integer x2) {
         return (x1 - x2);
     }
 }

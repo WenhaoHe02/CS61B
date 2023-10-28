@@ -13,7 +13,8 @@ import edu.princeton.cs.algs4.StdAudio;
 import edu.princeton.cs.algs4.StdDraw;
 
 /**This keyboard arrangement imitates a piano keyboard: The “white keys”
- * are on the qwerty and zxcv rows and the “black keys” on the 12345 and asdf rows of the keyboard.zxx
+ * are on the qwerty and zxcv rows and the “black keys” on the 12345 and asdf
+ * rows of the keyboard.zxx
  */
 
 public class GuitarHero {

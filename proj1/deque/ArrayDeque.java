@@ -127,7 +127,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
         private int itPosition;
         private int times;
         
-        public ArrayDequeIterator() {
+        ArrayDequeIterator() {
             itPosition = (nextFirst + 1) % capacity;
             times = 0;
         }

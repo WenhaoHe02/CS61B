@@ -13,10 +13,14 @@ import java.util.Comparator;
  */
 public class ComparatorOfDouble implements Comparator<Double> {
     @Override
-    public int compare(Double x1, Double x2){
-        if(x1- x2 > 0)return 1;
-        else if(x1 - x2 == 0)return 0;
-        else return -1;
+    public int compare(Double x1, Double x2) {
+        if (x1 - x2 > 0) {
+            return 1;
+        } else if (x1 - x2 == 0) {
+            return 0;
+        } else {
+            return -1;
+        }
     }
 }
 
