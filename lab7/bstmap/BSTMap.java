@@ -91,8 +91,8 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V>, Iterabl
     }
     @Override
     public  void put(K key, V value) {
-        if (containsKey(key)) {
-            size += 1;
+        if (!containsKey(key)) {
+           size += 1;
         }
         if (root == null) {
             root = new BSTNode(key, value, null, null);
